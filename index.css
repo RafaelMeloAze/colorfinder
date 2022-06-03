@@ -1,0 +1,246 @@
+
+
+@import url('https://fonts.googleapis.com/css?family=Cormorant+Garamond:400,400i,700|Tajawal:400,700');
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+
+}
+
+
+:root {
+
+
+ --alice-blue: rgba(227, 242, 253, 1);
+--uranian-blue: rgba(187, 222, 251, 1);
+--light-sky-blue: rgba(144, 202, 249, 1);
+--blue-jeans: rgba(100, 181, 246, 1);
+--blue-jeans-2: rgba(66, 165, 245, 1);
+--dodger-blue: rgba(33, 150, 243, 1);
+--bleu-de-france: rgba(30, 136, 229, 1);
+--bright-navy-blue: rgba(25, 118, 210, 1);
+--green-blue: rgba(21, 101, 192, 1);
+--cobalt-blue: rgba(13, 71, 161, 1);
+
+--prussian-blue: rgba(1, 42, 74, 1);
+--indigo-dye: rgba(1, 58, 99, 1);
+--indigo-dye-2: rgba(1, 73, 124, 1);
+--usafa-blue: rgba(1, 79, 134, 1);
+--honolulu-blue: rgba(42, 111, 151, 1);
+--celadon-blue: rgba(44, 125, 160, 1);
+--blue-green: rgba(70, 143, 175, 1);
+--maximum-blue: rgba(97, 165, 194, 1);
+--dark-sky-blue: rgba(137, 194, 217, 1);
+--light-blue: rgba(169, 214, 229, 1);
+    --ff-s: 'Cormorant Garamond', serif;;
+    --ff-ss: 'Tajawal', sans-serif;;
+    
+    --fw-l: 300;
+    --fw-n: 400;
+    --fw-b: 700;
+    
+    --fs-h1: calc(1em + 5vw);
+    --fs-h2: 2.5rem;
+    --fs-h3: 1.75rem;
+    --fs-body: 1.15rem;
+    --fs-small: .9rem;
+    
+    --clr-primary: #2A628F;
+    --clr-secondary: #86bbd8;
+    --clr-accent: #D69CCE;
+    --clr-dark: #2f4858;
+    --clr-gray: #B5B1B2;
+    --clr-light: #edf7f6;
+
+    --grid-s1f-1: 1 / -1;
+
+    --headercolor: lightgrey;
+
+  }
+  
+  @media (min-width: 800px) {
+    :root {
+      --fs-h1: 5rem;
+      --fs-h2: 3.5rem;
+      --fs-h3: 2.25rem;
+      --fs-body: 1.3rem;
+      --fs-small: .9rem;
+    }
+  }
+
+
+title{
+  display: none;
+}
+
+body{
+    padding-bottom: 10vh;
+    display: grid;
+    grid: auto-flow / minmax(.75em, 1fr) minmax(auto, 345px) minmax(.85em, 1fr) ;
+    position: relative;
+}
+
+body > *:not(header){
+    grid-column: 2;
+}
+
+header{
+    text-align: center;
+    position: sticky;
+    top: 0em;
+    display: grid;    
+    grid-column: var(--grid-s1f-1);      /* <---- this value = 1 / -1 -- stretches header full screen */
+    background-color: var(--headercolor);
+    z-index: -100;
+    place-items: center;
+    
+    /*  */
+    
+}
+
+header::before, 
+header::after {
+  position: absolute;
+  content: '';
+  width: 150px;
+  height: 150px;
+  background: var(--headercolor);
+  bottom: -2em;
+  z-index: -101;
+}
+
+header::before{
+  right: 50%;
+  transform: skew(0 , 25deg);
+}
+
+header::after{
+  left: 50%;
+  transform: skew(0 , -25deg);
+  
+}
+
+
+h1{
+  color: #000;
+  padding: 1.2em;
+}
+
+
+main{
+  /* display: block; */
+ 
+  position: relative;
+  top: -1.5em;
+  background-color: aliceblue;
+  border: #559 10px;
+  border-style: hidden;
+  box-shadow: 0px 1px 6px rgba(0,0,0,0.2);
+  padding-left: .25em;
+  padding-right: .25em;
+  padding-bottom: .7em;
+  padding-top: .5em;
+  border-radius: 15px;
+}
+
+
+
+
+.searchcontainer{
+  display: flex;
+  position: sticky;
+  top: 0;
+  background-color: whitesmoke;
+  width: 100%;
+  height: 3em;
+  max-height: 50px;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+  border: rgba(200, 200, 200, 0.856) solid 3px;
+  grid-column: var(--grid-s1f-1);
+  border-radius: 12px;
+    
+}
+
+.searchicon{
+  position: relative;
+  display: inline-flex;
+  justify-content: flex-start;
+  margin-right: 1em;
+  border: rgb(255, 255, 255) 2px solid;
+
+}
+
+.searchbarbox{
+  position: relative;
+  display: flex;
+  max-width: 300px;
+  text-align: center;
+  margin: 1em;
+  justify-content: flex-end;
+  
+}
+
+.searchbar{
+width: 100%;
+background: rgb(210, 242, 246);
+}
+
+.cardscontainer{
+  margin-top: .5em;
+    position: relative;
+  display: grid;
+  grid: auto-flow / minmax(100px, 1fr) minmax(100px, 1fr) minmax(100px, 1fr) ;
+  grid-gap: .6em;
+  
+    
+    
+    
+
+}
+
+.colorcard{
+    
+    display: grid;
+    background-color: lightgrey;
+    color: white;
+    position: relative;
+    width: 1fr;
+    border-radius: 25px;
+    justify-content: center;
+    align-content: center;
+    text-align: center;
+    min-height: 2rem;
+    box-shadow: 0 0 3px 1.5px var(--blue-green), 0 0 0 1px var(--clr-primary) ;
+    
+  
+  }
+
+.cardcontent{
+
+}
+
+.colors{
+
+}
+
+.colorsample{
+
+}
+
+.colorcodes{
+
+}
+
+.codetitle{
+
+}
+
+.codecolor{
+
+}
+
+
